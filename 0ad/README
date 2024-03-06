@@ -3,3 +3,7 @@ real-time strategy (RTS) game of ancient warfare.
 
 To omit the Atlas editor
     ATLAS=disable ./0ad.SlackBuild
+
+!!! IMPORTANT NOTICE !!!
+	This slackbuild script will download the latest release 
+	and build both 0ad and 0ad-data!
