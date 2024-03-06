@@ -22,7 +22,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # 
-# Leon Brokken <nkkrbnl@runbox.com> 2024-03-03: modified to use meson
+# 2024-03-03 Leon Brokken: 
+#  - modified to use meson
+#  - updated to v0.25
 
 cd $(dirname $0) ; CWD=$(pwd)
 
