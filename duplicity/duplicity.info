@@ -1,5 +1,5 @@
 PRGNAM="duplicity"
-VERSION="0.6.26"
+VERSION="2.2.2"
 HOMEPAGE="http://duplicity.nongnu.org/"
 DOWNLOAD="https://gitlab.com/duplicity/duplicity/-/archive/rel.2.2.2/duplicity-rel.2.2.2.tar.gz"
 MD5SUM="37965bc65ef8243d070732750820b932"
