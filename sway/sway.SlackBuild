@@ -35,6 +35,8 @@ BUILD=${BUILD:-1}
 TAG=${TAG:-_ljs}
 PKGTYPE=${PKGTYPE:-tgz}
 
+URL="https://github.com/swaywm/sway/archive/v$VERSION/sway-$VERSION.tar.gz"
+
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
@@ -67,10 +69,27 @@ else
 fi
 
 set -e
+
+# Check if the file already exists locally
+if [ -f "$CWD/$PRGNAM-$VERSION.tar.gz" ]; then
+    echo "Local file $PRGNAM-$VERSION.tar.gz already exists. Skipping download."
+else
+    echo "Local file $PRGNAM-$VERSION.tar.gz does not exist."
+	# Check if the file exists and download it if it does
+	if curl --output /dev/null --silent --head --fail "$URL"; then
+	    echo "Remote file exists. Downloading..."
+	    curl -O -L "$URL" && echo "Download successful."
+	else
+	    echo "File does not exist. Exiting script."
+	    exit 1
+	fi
+fi
+
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
+
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
 chown -R root:root .
