@@ -31,7 +31,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=waybar
 SRCNAM=Waybar
-VERSION=${VERSION:-0.10.3}
+VERSION=${VERSION:-0.10.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_ljs}
 PKGTYPE=${PKGTYPE:-txz}
